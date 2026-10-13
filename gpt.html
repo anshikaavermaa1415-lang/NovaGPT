@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+  <title>NovaGPT — Your AI Companion</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="gpt.css">
+</head>
+<body>
+
+<div class="app">
+
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <div class="brand-icon">✦</div>
+      <span>Nova<span class="brand-light">GPT</span></span>
+    </div>
+
+    <button class="new-chat" id="newChat">
+      <span>＋</span> New conversation
+    </button>
+
+    <p class="section-label">YOUR CHATS</p>
+    <nav class="history" id="history"></nav>
+
+    <div class="sidebar-bottom">
+      <div class="upgrade-card">
+        <span class="upgrade-icon">✧</span>
+        <div>
+          <strong>Your ideas, amplified.</strong>
+          <p>A little help goes a long way.</p>
+        </div>
+      </div>
+
+      <button class="side-link" id="helpButton">
+        <span>♡</span> Help & feedback
+      </button>
+
+      <div class="profile">
+        <div class="avatar">A</div>
+        <div class="profile-info">
+          <strong>My Workspace</strong>
+          <small>Personal space</small>
+        </div>
+        <span class="profile-dots">···</span>
+      </div>
+    </div>
+  </aside>
+
+  <main class="main">
+
+    <header class="topbar">
+      <button class="icon-button mobile-menu" id="mobileMenu"
+        aria-label="Open sidebar">☰</button>
+
+      <div class="current-title">
+        NovaGPT <span class="status-dot"></span>
+      </div>
+
+      <div class="top-actions">
+        <button class="icon-button" id="topNew"
+          title="New conversation" aria-label="New conversation">＋</button>
+      </div>
+    </header>
+
+    <section class="chat-area" id="chatArea">
+
+      <div class="welcome" id="welcome">
+        <div class="welcome-orbit">
+          <div class="welcome-icon">✦</div>
+          <span class="spark spark-one">✧</span>
+          <span class="spark spark-two">✦</span>
+        </div>
+
+        <p class="eyebrow">YOUR LITTLE SPACE TO CREATE</p>
+
+        <h1>Big ideas start<br>with a <span>little question.</span></h1>
+
+        <p class="welcome-description">
+          Learn something new, solve a problem, or turn
+          that idea in your head into something real.
+        </p>
+
+        <div class="suggestions">
+          <button data-prompt="Explain HTML in simple words">
+            <span class="suggestion-icon pink">⌘</span>
+            <span><strong>Learn to code</strong><small>Make concepts simple</small></span>
+            <span class="suggestion-arrow">↗</span>
+          </button>
+
+          <button data-prompt="Give me a beginner C++ coding exercise">
+            <span class="suggestion-icon purple">&lt;/&gt;</span>
+            <span><strong>Practice coding</strong><small>One step at a time</small></span>
+            <span class="suggestion-arrow">↗</span>
+          </button>
+
+          <button data-prompt="Help me plan a beautiful personal website">
+            <span class="suggestion-icon peach">✧</span>
+            <span><strong>Create something</strong><small>Bring ideas to life</small></span>
+            <span class="suggestion-arrow">↗</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="messages" id="messages" aria-live="polite"></div>
+
+    </section>
+
+    <div class="composer-wrap">
+      <form class="composer" id="chatForm">
+        <textarea
+          id="prompt"
+          rows="1"
+          maxlength="5000"
+          placeholder="Ask NovaGPT anything..."
+          aria-label="Write your message"
+        ></textarea>
+
+        <div class="composer-bottom">
+          <span class="input-hint"><span>✧</span> Curious minds welcome</span>
+          <button type="submit" class="send-button"
+            id="sendButton" aria-label="Send message">↑</button>
+        </div>
+      </form>
+
+      <p class="disclaimer">
+        Made for curious minds ♡ &nbsp; AI responses may need verification.
+      </p>
+    </div>
+
+  </main>
+</div>
+
+<div class="toast" id="toast" role="status"></div>
+
+<script src="gpt.js"></script>
+</body>
+</html>
